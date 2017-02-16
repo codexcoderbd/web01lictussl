@@ -4,12 +4,25 @@
     <title>Form GET POST</title>
 </head>
 
+<?php
+
+if (isset($_POST["submit"]))
+{
+    $fname = $_POST['firstname'];
+
+    $lname = $_POST['lastname'];
+
+    echo $fname."<br/>";
+    echo $lname."<br/>";
+}
+
+?>
 
 <body>
 
-<h1><center>Basic Form Actionz</center></h1><hr>
+<h1><center>Basic Form Actionz [Same Page]</center></h1><hr>
 
-<form id="" action="form_action.php" method="POST"> <!--If undefined method... works GET-->
+<form id="" action="" method="POST"> <!--If undefined method... works GET-->
     <fieldset>
         <legend>Personal information:</legend>
         First Name : <br/>
@@ -37,6 +50,12 @@
 
         Quantity(between 1 and 10):
         <input type="number" name="quantity" min="0" max="10">
+
+        <br>
+        <h3>The Placeholder Attribute</h3>
+
+        First Name:<br/>
+        <input type="text" name="lastname" value="" placeholder="Please Insert Your First Name">
 
         <br>
         <h3>The Read Only Attribute</h3>
@@ -84,14 +103,26 @@
         Last Name:<br/>
         <input type="text" name="lastname" value="Ahmed" minlength="4"><br/>
 
-        First:<br/>
-        <input type="text" name="lastname" autofocus><br/>
+
 
         <br>
         <h3>Autofocus Attribute</h3>
 
-        First Name:<br/>
-        <input type="text" name="firstname" value="Sufian" maxlength="50"><br/>
+        First:<br/>
+        <input type="text" name="lastname" autofocus><br/>
+
+        <br>
+        <h3>The Multiple Attribute</h3>
+
+        Select images:<input type="file" name="img" ><br/>
+
+        Select images:<input type="file" name="img" multiple><br/>
+
+        <br>
+        <h3>The Pattern Attribute</h3>
+
+        Country Code:<input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Only Three letter Country Code"><br/>
+
 
         <br>
         <h3>select your favourite color:</h3>
